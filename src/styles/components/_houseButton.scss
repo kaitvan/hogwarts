@@ -1,0 +1,27 @@
+%house-button {
+  box-shadow: $box-shadow;
+  outline: 0;
+  border: none;
+  border-radius: 2px;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 16px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $white;
+  img {
+    display: inline-block;
+    padding-left: 20px;
+    max-width: 40px;
+    max-height: 40px;
+  }
+}
+
+@each $house, $house-color in $house-list {
+  .house-button-#{$house} {
+    @extend %house-button;
+    background-color: #{$house-color};
+  }
+}
